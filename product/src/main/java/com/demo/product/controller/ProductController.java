@@ -6,6 +6,7 @@ package com.demo.product.controller;
 import com.demo.common.base.ApiResult;
 import com.demo.product.config.ProductConfig;
 import jakarta.annotation.Resource;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,8 +20,8 @@ public class ProductController {
   @Resource
   ProductConfig productconfig;
 
-  @RequestMapping("/v1/product")
-  ApiResult<String> getProductInfo(){
+  @PostMapping("/v1/product/sku")
+  ApiResult<String> getProductSku(){
     return ApiResult.ok(productconfig.getSku());
   }
 }

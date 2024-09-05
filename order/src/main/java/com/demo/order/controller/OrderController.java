@@ -6,6 +6,7 @@ package com.demo.order.controller;
 import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.demo.common.base.ApiResult;
 import com.demo.order.configuration.DemoConfig;
+import com.demo.order.feign.ProductFeignService;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +22,12 @@ public class OrderController {
   @Resource
   DemoConfig demoConfig;
 
+  @Resource
+  ProductFeignService productFeignService;
+
   @GetMapping("/v1/test/config")
   ApiResult<String> test(){
-    return ApiResult.ok(demoConfig.getSku());
+    return productFeignService.getProductSku();
   }
 
 }
