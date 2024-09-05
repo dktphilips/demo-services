@@ -24,4 +24,16 @@ public class ProductController {
   ApiResult<String> getProductSku(){
     return ApiResult.ok(productconfig.getSku());
   }
+
+  @PostMapping("/v1/product/name")
+  ApiResult<String> getProductName() throws InterruptedException {
+    Thread.sleep(2000);
+    return ApiResult.ok(productconfig.getName());
+  }
+
+  @PostMapping("/v1/product/stock")
+  ApiResult<Integer> getProductStock(){
+    return ApiResult.ok(productconfig.getStock());
+  }
+
 }

@@ -17,4 +17,10 @@ public interface ProductFeignService {
 
   @PostMapping("/v1/product/sku")
   ApiResult<String> getProductSku();
+
+  @PostMapping("/v1/product/name")
+  ApiResult<String> getProductName();
+
+  @PostMapping("/v1/product/stock")
+  ApiResult<Integer> getProductStock();
 }

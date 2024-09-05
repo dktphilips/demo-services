@@ -10,10 +10,14 @@ spring:
         server-addr: 127.0.0.1:8848
         namespace: 1e608fee-5814-4a84-ab9d-35f701d0c625
         group: DEMO_GROUP
+        username: nacos
+        password: nacos
       config:
         server-addr: 127.0.0.1:8848
         namespace: 1e608fee-5814-4a84-ab9d-35f701d0c625
         group: DEMO_GROUP
+        username: nacos
+        password: nacos
         file-extension: yaml
     gateway:
       discovery:

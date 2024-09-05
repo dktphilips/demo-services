@@ -25,9 +25,17 @@ public class OrderController {
   @Resource
   ProductFeignService productFeignService;
 
-  @GetMapping("/v1/test/config")
-  ApiResult<String> test(){
+  @GetMapping("/v1/order/test/sku")
+  ApiResult<String> getSku(){
     return productFeignService.getProductSku();
+  }
+
+  @GetMapping("/v1/order/test/name")
+  ApiResult<String> getName() {return productFeignService.getProductName();
+  }
+
+  @GetMapping("/v1/order/test/stock")
+  ApiResult<Integer> getStock() {return productFeignService.getProductStock();
   }
 
 }
